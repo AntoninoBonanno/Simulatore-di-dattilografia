@@ -1,0 +1,323 @@
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F0F8FF;
+}
+
+#timer{
+  position: relative;
+  width: 20vw;
+  height: 3vh;
+  margin: auto;
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 1rem;
+}
+
+#read{
+  position: relative;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 70vw;
+  max-height: 20vh;
+  background: #9ecaed;
+  border: 1px outset;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  box-shadow: 0 0 2.5vw #9ecaed;
+  font-family: courier;
+  font-size: 1.5vw;
+  overflow-y: auto;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#prompt{
+  background-color: rgba(255,255,0, 0.5);
+}
+
+#write{
+  display: block;
+  position: relative;
+  margin: auto;
+  margin-bottom: 2.5vw;
+  width: 70vw;
+  resize: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  font-family: courier;
+  font-size: 2vw;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.popup_container{
+  display: none;
+  position: fixed;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+
+
+#endlevel_popup{
+  position: fixed;
+  z-index: 100;
+  background: #fff;
+  width: 50vw;
+  height: 70vh;
+  top: 15vh;
+  left: 25vw;
+  box-shadow: 10px 10px 60px #555;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#endlevel_text{
+  position: relative;
+  margin: auto;
+  margin-top: 2vh;
+  margin-bottom: 10vh;
+  width: 100%;
+  height: 3vh;
+  font-size: 3vh;
+}
+
+#endlevel_img{
+  position: relative;
+  margin: auto;
+  width: 10vw;
+}
+
+#score{
+  position: relative;
+  margin: auto;
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+  width: 100%;
+  height: 20vh;
+  font-size: 3vh;
+}
+
+.popup_buttons{
+  position: relative;
+  width: 100%;
+}
+
+.popup_button{
+  position: absolute;
+  width: 8vw;
+  height: 7vh;
+  margin: 0;
+  left: 21vw;
+  border-radius: 15px;
+  font-size: 1vw;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0px 0px 2px #000;
+  overflow: hidden;
+
+  background: -moz-linear-gradient(
+		top,
+		#ebf1fb 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#cbdaf4);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ebf1fb),
+		color-stop(0.50, #9ecaed),
+		color-stop(0.50, #9ecaed),
+		to(#cbdaf4));
+}
+
+#keyboard_container{
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 70vw;
+}
+
+#keyboard {
+  margin: auto;
+  padding: 0%;
+  list-style: none;
+  border: 2px solid #dadada;
+  box-shadow: 0 0 2.5vw #9ecaed;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+#keyboard li{
+    float: left;
+    font-size: 1.2vw;
+    width: 3.5vw;
+    height: 3.5vw;
+    line-height: 3.5vw;
+    text-align: center;
+    margin: 0.1vw;
+    background: #fff;
+    border: 1px solid #dadada;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#keyboard .tab, #keyboard .capslock, #keyboard #left-shift, #keyboard #left-ctrl {
+  clear: left;
+  width: 7vw;
+}
+
+#keyboard .backspace, #keyboard #right-shift, #keyboard #right-ctrl{
+  width: 7vw;
+}
+
+#keyboard .space{
+  width: 28vw;
+}
+
+#keyboard .lastitem{
+  clear: right;
+}
+
+.hidden{
+  display: none;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.circle{
+  position: absolute;
+  background-color: rgba(158, 202, 237, 0.7);
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 100%;
+
+  -webkit-animation:collapse 0.2s;
+  -o-animation:collapse 0.2s;
+  -moz-animation:collapse 0.2s;
+  animation:collapse 0.2s;
+
+  -webkit-transform: scale( 0 );
+  -moz-transform: scale( 0 );
+  -o-transform: scale( 0 );
+  transform: scale( 0 );
+}
+
+.space_square{
+  position: absolute;
+  background-color: rgba(158, 202, 237, 0.7);
+  width: 28vw;
+  height: 3.5vw;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+
+  -webkit-animation:collapse 0.2s;
+  -o-animation:collapse 0.2s;
+  -moz-animation:collapse 0.2s;
+  animation:collapse 0.2s;
+
+  -webkit-transform: scale( 0 );
+  -moz-transform: scale( 0 );
+  -o-transform: scale( 0 );
+  transform: scale( 0 );
+}
+
+.backspace_square{
+  position: absolute;
+  background-color: rgba(158, 202, 237, 0.7);
+  width: 7vw;
+  height: 3.5vw;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+
+  -webkit-animation:collapse 0.2s;
+  -o-animation:collapse 0.2s;
+  -moz-animation:collapse 0.2s;
+  animation:collapse 0.2s;
+
+  -webkit-transform: scale( 0 );
+  -moz-transform: scale( 0 );
+  -o-transform: scale( 0 );
+  transform: scale( 0 );
+}
+
+.enter_square{
+  position: absolute;
+  background-color: rgba(158, 202, 237, 0.7);
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+
+  -webkit-animation:collapse 0.2s;
+  -o-animation:collapse 0.2s;
+  -moz-animation:collapse 0.2s;
+  animation:collapse 0.2s;
+
+  -webkit-transform: scale( 0 );
+  -moz-transform: scale( 0 );
+  -o-transform: scale( 0 );
+  transform: scale( 0 );
+}
+
+.grow{
+  -webkit-animation:grow 0.2s;
+  -o-animation:grow 0.2s;
+  -moz-animation:grow 0.2s;
+  animation:grow 0.2s;
+
+  -webkit-transform: scale( 1 );
+  -moz-transform: scale( 1 );
+  -o-transform: scale( 1 );
+  transform: scale( 1 );
+}
+
+@-webkit-keyframes grow {
+  0%   { -webkit-transform: scale( 0 ); }
+  100% { -webkit-transform: scale( 1 ); }
+}
+@-moz-keyframes grow {
+  0%   { -moz-transform: scale( 0 ); }
+  100% { -moz-transform: scale( 1 ); }
+}
+@-o-keyframes grow {
+  0%   { -o-transform: scale( 0 ); }
+  100% { -o-transform: scale( 1 ); }
+}
+@keyframes grow {
+  0%   { transform: scale( 0 ); }
+  100% { transform: scale( 1 ); }
+}
+
+
+@-webkit-keyframes collapse {
+  0%   { -webkit-transform: scale( 1 ); }
+  100% { -webkit-transform: scale( 0 ); }
+}
+@-moz-keyframes collapse {
+  0%   { -moz-transform: scale( 1 ); }
+  100% { -moz-transform: scale( 0 ); }
+}
+@-o-keyframes collapse {
+  0%   { -o-transform: scale( 1 ); }
+  100% { -o-transform: scale( 0 ); }
+}
+@keyframes collapse {
+  0%   { transform: scale( 1 ); }
+  100% { transform: scale( 0 ); }
+}

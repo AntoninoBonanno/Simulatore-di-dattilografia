@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" src="keyboard.js"></script>
+  <script type="text/javascript" src="hackKeyboard.js"></script>
+  <link rel="stylesheet" type="text/css" href="keyboard.css">
+  <meta charset="utf-8">
+</head>
+
+<body>  
+  <div id="container_1" style="position: absolute; width: 100vw; height: 10vh; top: 2vh;">
+    <div style="text-align: center;">
+      <h2>Obiettivi</h2>
+      Tempo: <input type="text" id="timeinput" value="00:25:00" placeholder="Tempo (hh:mm:ss)" autofocus/> <br>
+      Numero caratteri <input type="number" id="goal" placeholder="Numero caratteri"/> <br>
+      <small>Al click della casella di testo gli obiettivi saranno settati e il tempo inizierà dopo aver digitato la prima lettera</small>
+    </div>
+    <div id="timer"></div>
+  </div>
+  <div id="container_2" style="position: absolute;  width: 100vw;top: 26vh;">
+    <div id="read"> <span id="pre_prompt"></span><span id="prompt">I</span><span id="post_prompt">n prossimità di un bosco, 
+        vivevano tre porcellini. Per mettersi al sicuro da un certo lupo che abitava nei paraggi, decisero di costruirsi tre 
+        casette. Il più volenteroso si procurò calce e mattoni, gli altri decisero di affaticarsi di meno e preferirono l'uno 
+        la paglia, l'altro il legno. In poco tempo e con poca fatica, la casetta di paglia fu pronta. Ma la debole costruzione 
+        non resistette al primo assalto del lupo. Bastò un semplice soffio e il porcellino si trovò senza riparo. 
+        Impaurito, corse a perdifiato verso la casetta di legno. Pensando di essere al sicuro, 
+        i due porcellini risero alle spalle del fratello che, con tanto impegno e fatica, si era costruito la casa in mattoni. 
+        Intanto il lupo non volle darsi per vinto così facilmente e, dopo una bella corsa, si fermò davanti alla casetta. 
+        - Aprite - intimò ai due porcellini. - Vattene, non ci fai paura... - Allora il lupo raccolse tutto il fiato che aveva e 
+        soffiò più forte che mai. In un attimo la porta cedette e ai due malcapitati non restò che correre dal saggio fratello. 
+        I tre fratelli fecero appena in tempo a chiudere la porta in faccia al lupo. In quel momento i due porcellini, ansanti e 
+        ancora spaventati, capirono quanto è importante fare le cose con impegno. Ora erano al sicuro, ma come liberarsi del lupo?
+        Il lupo innervosito, capì che questa volta non sarebbe bastato soffiare sulla casa per aprirsi un varco. 
+        Si accanì allora sulla porta, ma questa, che aveva cardini robusti, non cedette. Il lupo, credendo di essere molto furbo, 
+        si arrampicò su un albero e pensò di sorprendere i tre porcellini entrando in casa dal camino. Nella foga di attuare il 
+        piano, non si accorse che il porcellino saggio si era reso conto delle sue intenzioni. Il porcellino gli preparò, svelto 
+        svelto, una sorpresa. Accese un bel fuoco nel caminetto e aspettò che il lupo vi cadesse sopra. A questo punto il lupo, 
+        stanco e bruciacchiato, si allontanò di corsa e non si fece più vedere. Da quel giorno i tre porcellini vissero al sicuro 
+        nella bella casetta di mattoni.
+      </span>
+    </div>
+    <textarea id="write" rows="3" cols="60" spellcheck="false" placeholder="Scrivere qui il testo"
+      onfocus='setTimer(document.getElementById("timeinput").value); ex_char("")'></textarea>
+    <div id="keyboard_container">
+      <ul id="keyboard">
+        <li class="symbol" id="\">
+          <div class="circle"></div><span class="off">\</span><span class="on hidden">|</span>
+        </li>
+        <li class="symbol" id="1">
+          <div class="circle"></div><span class="off">1</span><span class="on hidden">!</span>
+        </li>
+        <li class="symbol" id="2">
+          <div class="circle"></div><span class="off">2</span><span class="on hidden">”</span>
+        </li>
+        <li class="symbol" id="3">
+          <div class="circle"></div><span class="off">3</span><span class="on hidden">£</span>
+        </li>
+        <li class="symbol" id="4">
+          <div class="circle"></div><span class="off">4</span><span class="on hidden">$</span>
+        </li>
+        <li class="symbol" id="5">
+          <div class="circle"></div><span class="off">5</span><span class="on hidden">%</span>
+        </li>
+        <li class="symbol" id="6">
+          <div class="circle"></div><span class="off">6</span><span class="on hidden">&amp;</span>
+        </li>
+        <li class="symbol" id="7">
+          <div class="circle"></div><span class="off">7</span><span class="on hidden">/</span>
+        </li>
+        <li class="symbol" id="8">
+          <div class="circle"></div><span class="off">8</span><span class="on hidden">(</span>
+        </li>
+        <li class="symbol" id="9">
+          <div class="circle"></div><span class="off">9</span><span class="on hidden">)</span>
+        </li>
+        <li class="symbol" id="0">
+          <div class="circle"></div><span class="off">0</span><span class="on hidden">=</span>
+        </li>
+        <li class="symbol" id="'">
+          <div class="circle"></div><span class="off">'</span><span class="on hidden">?</span>
+        </li>
+        <li class="symbol" id="ì">
+          <div class="circle"></div><span class="off">ì</span><span class="on hidden">^</span>
+        </li>
+        <li class="backspace lastitem" id="backspace">
+          <div class="backspace_square"></div>Backspace
+        </li>
+        <li class="tab" id="tab">Tab</li>
+        <li class="letter" id="q">
+          <div class="circle"></div>q
+        </li>
+        <li class="letter" id="w">
+          <div class="circle"></div>w
+        </li>
+        <li class="letter" id="e">
+          <div class="circle"></div>e
+        </li>
+        <li class="letter" id="r">
+          <div class="circle"></div>r
+        </li>
+        <li class="letter" id="t">
+          <div class="circle"></div>t
+        </li>
+        <li class="letter" id="y">
+          <div class="circle"></div>y
+        </li>
+        <li class="letter" id="u">
+          <div class="circle"></div>u
+        </li>
+        <li class="letter" id="i">
+          <div class="circle"></div>i
+        </li>
+        <li class="letter" id="o">
+          <div class="circle"></div>o
+        </li>
+        <li class="letter" id="p">
+          <div class="circle"></div>p
+        </li>
+        <li class="symbol" id="è">
+          <div class="circle"></div><span class="off">è</span><span class="on hidden">é</span>
+        </li>
+        <li class="symbol" id="+">
+          <div class="circle"></div><span class="off">+</span><span class="on hidden">*</span>
+        </li>
+        <li class="enter lastitem" id="enter">
+          <div class="enter_square"></div>Enter
+        </li>
+        <li class="capslock" id="caps_lock">Caps Lock</li>
+        <li class="letter" id="a">
+          <div class="circle"></div>a
+        </li>
+        <li class="letter" id="s">
+          <div class="circle"></div>s
+        </li>
+        <li class="letter" id="d">
+          <div class="circle"></div>d
+        </li>
+        <li class="letter" id="f">
+          <div class="circle"></div>f
+        </li>
+        <li class="letter" id="g">
+          <div class="circle"></div>g
+        </li>
+        <li class="letter" id="h">
+          <div class="circle"></div>h
+        </li>
+        <li class="letter" id="j">
+          <div class="circle"></div>j
+        </li>
+        <li class="letter" id="k">
+          <div class="circle"></div>k
+        </li>
+        <li class="letter" id="l">
+          <div class="circle"></div>l
+        </li>
+        <li class="symbol" id="ò">
+          <div class="circle"></div><span class="off">ò</span><span class="on hidden">ç</span>
+        </li>
+        <li class="symbol" id="à">
+          <div class="circle"></div><span class="off">à</span><span class="on hidden">°</span>
+        </li>
+        <li class="symbol" id="ù">
+          <div class="circle"></div><span class="off">ù</span><span class="on hidden">§</span>
+        </li>
+        <li class="shift" id="left-shift">Shift</li>
+        <li class="symbol" id="&lt;">
+          <div class="circle"></div><span class="off">&lt;</span><span class="on hidden">&gt;</span>
+        </li>
+        <li class="letter" id="z">
+          <div class="circle"></div>z
+        </li>
+        <li class="letter" id="x">
+          <div class="circle"></div>x
+        </li>
+        <li class="letter" id="c">
+          <div class="circle"></div>c
+        </li>
+        <li class="letter" id="v">
+          <div class="circle"></div>v
+        </li>
+        <li class="letter" id="b">
+          <div class="circle"></div>b
+        </li>
+        <li class="letter" id="n">
+          <div class="circle"></div>n
+        </li>
+        <li class="letter" id="m">
+          <div class="circle"></div>m
+        </li>
+        <li class="symbol" id=",">
+          <div class="circle"></div><span class="off">,</span><span class="on hidden">;</span>
+        </li>
+        <li class="symbol" id=".">
+          <div class="circle"></div><span class="off">.</span><span class="on hidden">:</span>
+        </li>
+        <li class="symbol" id="-">
+          <div class="circle"></div><span class="off">-</span><span class="on hidden">_</span>
+        </li>
+        <li class="shift lastitem" id="right-shift">Shift</li>
+        <li class="ctrl" id="left-ctrl">Ctrl</li>
+        <li class="symbol" id="win">Win</li>
+        <li class="symbol" id="alt">Alt</li>
+        <li class="space" id="space">
+          <div class="space_square">&nbsp;</div>
+        </li>
+        <li class="symbol" id="alt_gr">Alt Gr</li>
+        <li class="ctrl lastitem" id="right-ctrl">Ctrl</li>
+      </ul>
+    </div>
+  </div>
+  <div id="endlevel_popup_container" class="popup_container">
+    <div id="endlevel_popup">
+      <div id="endlevel_text"></div>
+      <div id="endlevel_img"></div>
+      <div id="score"></div>
+      <div id="popup_buttons">
+        <button class="popup_button" onclick="location.reload();">Riprova</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
